@@ -1249,7 +1249,7 @@
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = 'theophrastus_results.txt';
+      a.download = 'results.txt';
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
@@ -1268,7 +1268,7 @@
       });
       const fullText = topText + "\nRanking:\n" + listText;
       navigator.share({
-        title: "My Theophrastus Characters Test Result",
+        title: "My Characters Test Result",
         text: fullText
       }).catch(err => {
         console.error("Share failed:", err);
