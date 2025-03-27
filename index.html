@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>30 Characters Personality Test</title>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      background: #fdf7e2;
+      color: #2a2a2a;
+      font-family: 'Crimson Pro', Georgia, serif;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1, h2, h3 {
+      color: #2a2a2a;
+      font-weight: 700;
+      margin-top: 1em;
+      margin-bottom: 0.5em;
+    }
+    h1 {
+      font-size: 2em;
+      margin-top: 0;
+    }
+    h2 {
+      font-size: 1.5em;
+    }
+    h3 {
+      font-size: 1.2em;
+      font-style: italic;
+    }
+    .character-block {
+      margin-bottom: 2em;
+    }
+    fieldset {
+      border: none;
+      margin: 0 0 0.8em 0;
+      padding: 0;
+    }
+    legend {
+      font-weight: 400;
+    }
+    .likert-options {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      column-gap: 10px;
+    }
+    .likert-options label {
+      display: block;
+    }
+    .likert-options input[type=radio] {
+      margin-right: 4px;
+    }
+    button, input[type=submit] {
+      background: #333;
+      color: #fdf7e2;
+      border: none;
+      border-radius: 4px;
+      padding: 8px 16px;
+      font-size: 1em;
+      cursor: pointer;
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-weight: 700;
+    }
+    button:hover, input[type=submit]:hover {
+      background: #444;
+    }
+    #intro, #questionsSection, #results {
+      display: none;
+    }
+    #intro {
+      display: block;
+    }
+    #shareButtons {
+      margin-top: 1em;
+    }
+    #shareButtons button {
+      margin-right: 0.5em;
+      margin-bottom: 0.5em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section id="intro">
+      <h1>30 Characters Personality Test</h1>
+      <p>Each of these <q>characters</q> represents a personality type or set of behaviors.</p>
+      <p>This test presents statements related to each of the thirty character types. Rate how much you agree or disagree with each statement. In the end, you'll discover which character from Theophrastus's work you resemble the most, and see a ranking of all thirty characters based on your responses.</p>
+      <button id="startBtn">Start the Test</button>
+    </section>
+    <section id="questionsSection">
+      <h2>Rate the Statements</h2>
+      <p>Please read each statement below and select how much you agree or disagree. <strong>All questions are required.</strong> The statements are grouped by character type, but try to respond honestly for yourself rather than what you think the character might be.</p>
+      <form id="quizForm">
+        <section class="character-block">
+          <fieldset>
+            <legend>I sometimes pretend not to notice things (like not hearing or seeing something) when it suits me.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="ironical_1" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="ironical_1" value="1"> Disagree</label>
+              <label><input type="radio" name="ironical_1" value="2"> Neutral</label>
+              <label><input type="radio" name="ironical_1" value="3"> Agree</label>
+              <label><input type="radio" name="ironical_1" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I might act friendly towards someone I actually dislike to avoid open conflict.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="ironical_2" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="ironical_2" value="1"> Disagree</label>
+              <label><input type="radio" name="ironical_2" value="2"> Neutral</label>
+              <label><input type="radio" name="ironical_2" value="3"> Agree</label>
+              <label><input type="radio" name="ironical_2" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I often hide my true feelings behind a show of politeness or insincerity.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="ironical_3" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="ironical_3" value="1"> Disagree</label>
+              <label><input type="radio" name="ironical_3" value="2"> Neutral</label>
+              <label><input type="radio" name="ironical_3" value="3"> Agree</label>
+              <label><input type="radio" name="ironical_3" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+        </section>
+        <section class="character-block">
+          <fieldset>
+            <legend>I often compliment people in power or with influence to stay on their good side.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="flatterer_1" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="flatterer_1" value="1"> Disagree</label>
+              <label><input type="radio" name="flatterer_1" value="2"> Neutral</label>
+              <label><input type="radio" name="flatterer_1" value="3"> Agree</label>
+              <label><input type="radio" name="flatterer_1" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I have flattered someone because I wanted something from them.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="flatterer_2" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="flatterer_2" value="1"> Disagree</label>
+              <label><input type="radio" name="flatterer_2" value="2"> Neutral</label>
+              <label><input type="radio" name="flatterer_2" value="3"> Agree</label>
+              <label><input type="radio" name="flatterer_2" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I tend to agree with powerful or influential people even if I don't really mean it.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="flatterer_3" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="flatterer_3" value="1"> Disagree</label>
+              <label><input type="radio" name="flatterer_3" value="2"> Neutral</label>
+              <label><input type="radio" name="flatterer_3" value="3"> Agree</label>
+              <label><input type="radio" name="flatterer_3" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+        </section>
+        <section class="character-block">
+          <fieldset>
+            <legend>I frequently talk at length about trivial matters.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="garrulous_1" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="garrulous_1" value="1"> Disagree</label>
+              <label><input type="radio" name="garrulous_1" value="2"> Neutral</label>
+              <label><input type="radio" name="garrulous_1" value="3"> Agree</label>
+              <label><input type="radio" name="garrulous_1" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I often overshare mundane details of my life with people I just met.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="garrulous_2" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="garrulous_2" value="1"> Disagree</label>
+              <label><input type="radio" name="garrulous_2" value="2"> Neutral</label>
+              <label><input type="radio" name="garrulous_2" value="3"> Agree</label>
+              <label><input type="radio" name="garrulous_2" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Once I start talking, I struggle to stop, even if the topic isn't important.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="garrulous_3" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="garrulous_3" value="1"> Disagree</label>
+              <label><input type="radio" name="garrulous_3" value="2"> Neutral</label>
+              <label><input type="radio" name="garrulous_3" value="3"> Agree</label>
+              <label><input type="radio" name="garrulous_3" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+        </section>
+        <section class="character-block">
+          <fieldset>
+            <legend>Without meaning to, I sometimes do things that others find crude or inappropriate.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="boor_1" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="boor_1" value="1"> Disagree</label>
+              <label><input type="radio" name="boor_1" value="2"> Neutral</label>
+              <label><input type="radio" name="boor_1" value="3"> Agree</label>
+              <label><input type="radio" name="boor_1" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>People have told me that my behavior can be rude or uncultured, even if I don't realize it.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="boor_2" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="boor_2" value="1"> Disagree</label>
+              <label><input type="radio" name="boor_2" value="2"> Neutral</label>
+              <label><input type="radio" name="boor_2" value="3"> Agree</label>
+              <label><input type="radio" name="boor_2" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I can be oblivious to social norms or proper etiquette at times.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="boor_3" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="boor_3" value="1"> Disagree</label>
+              <label><input type="radio" name="boor_3" value="2"> Neutral</label>
+              <label><input type="radio" name="boor_3" value="3"> Agree</label>
+              <label><input type="radio" name="boor_3" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+        </section>
+        <section class="character-block">
+          <fieldset>
+            <legend>I often go out of my way to please people when I need something from them.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="complaisant_1" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="complaisant_1" value="1"> Disagree</label>
+              <label><input type="radio" name="complaisant_1" value="2"> Neutral</label>
+              <label><input type="radio" name="complaisant_1" value="3"> Agree</label>
+              <label><input type="radio" name="complaisant_1" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I sometimes act helpless or overly agreeable to get others to help me.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="complaisant_2" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="complaisant_2" value="1"> Disagree</label>
+              <label><input type="radio" name="complaisant_2" value="2"> Neutral</label>
+              <label><input type="radio" name="complaisant_2" value="3"> Agree</label>
+              <label><input type="radio" name="complaisant_2" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I might shower someone with compliments mainly to receive favors or benefits in return.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="complaisant_3" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="complaisant_3" value="1"> Disagree</label>
+              <label><input type="radio" name="complaisant_3" value="2"> Neutral</label>
+              <label><input type="radio" name="complaisant_3" value="3"> Agree</label>
+              <label><input type="radio" name="complaisant_3" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+        </section>
+        <section class="character-block">
+          <fieldset>
+            <legend>I'm willing to do outrageous things in public without worrying about what others think.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="reckless_1" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="reckless_1" value="1"> Disagree</label>
+              <label><input type="radio" name="reckless_1" value="2"> Neutral</label>
+              <label><input type="radio" name="reckless_1" value="3"> Agree</label>
+              <label><input type="radio" name="reckless_1" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I don't feel embarrassed easily, even when others think I should.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="reckless_2" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="reckless_2" value="1"> Disagree</label>
+              <label><input type="radio" name="reckless_2" value="2"> Neutral</label>
+              <label><input type="radio" name="reckless_2" value="3"> Agree</label>
+              <label><input type="radio" name="reckless_2" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>If I feel I've been insulted, I have no problem causing a scene to defend my pride.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="reckless_3" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="reckless_3" value="1"> Disagree</label>
+              <label><input type="radio" name="reckless_3" value="2"> Neutral</label>
+              <label><input type="radio" name="reckless_3" value="3"> Agree</label>
+              <label><input type="radio" name="reckless_3" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+        </section>
+        <section class="character-block">
+          <fieldset>
+            <legend>I love to talk and often can't hold back once I start.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="chatty_1" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="chatty_1" value="1"> Disagree</label>
+              <label><input type="radio" name="chatty_1" value="2"> Neutral</label>
+              <label><input type="radio" name="chatty_1" value="3"> Agree</label>
+              <label><input type="radio" name="chatty_1" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I often find myself speaking constantly, even when I have nothing important to say.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="chatty_2" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="chatty_2" value="1"> Disagree</label>
+              <label><input type="radio" name="chatty_2" value="2"> Neutral</label>
+              <label><input type="radio" name="chatty_2" value="3"> Agree</label>
+              <label><input type="radio" name="chatty_2" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I struggle to keep things to myself; I end up narrating whatever comes to mind.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="chatty_3" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="chatty_3" value="1"> Disagree</label>
+              <label><input type="radio" name="chatty_3" value="2"> Neutral</label>
+              <label><input type="radio" name="chatty_3" value="3"> Agree</label>
+              <label><input type="radio" name="chatty_3" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+        </section>
+        <section class="character-block">
+          <fieldset>
+            <legend>I enjoy sharing news or rumors about other people.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="gossip_1" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="gossip_1" value="1"> Disagree</label>
+              <label><input type="radio" name="gossip_1" value="2"> Neutral</label>
+              <label><input type="radio" name="gossip_1" value="3"> Agree</label>
+              <label><input type="radio" name="gossip_1" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I sometimes spread stories about others without knowing if they're true.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="gossip_2" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="gossip_2" value="1"> Disagree</label>
+              <label><input type="radio" name="gossip_2" value="2"> Neutral</label>
+              <label><input type="radio" name="gossip_2" value="3"> Agree</label>
+              <label><input type="radio" name="gossip_2" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I like being in the know about others' lives, even if it's none of my business.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="gossip_3" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="gossip_3" value="1"> Disagree</label>
+              <label><input type="radio" name="gossip_3" value="2"> Neutral</label>
+              <label><input type="radio" name="gossip_3" value="3"> Agree</label>
+              <label><input type="radio" name="gossip_3" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+        </section>
+        <section class="character-block">
+          <fieldset>
+            <legend>I care very little about what people think of me if it means I can get something I want.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="shameless_1" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="shameless_1" value="1"> Disagree</label>
+              <label><input type="radio" name="shameless_1" value="2"> Neutral</label>
+              <label><input type="radio" name="shameless_1" value="3"> Agree</label>
+              <label><input type="radio" name="shameless_1" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I would do something most consider disgraceful if it meant achieving a goal of mine.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="shameless_2" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="shameless_2" value="1"> Disagree</label>
+              <label><input type="radio" name="shameless_2" value="2"> Neutral</label>
+              <label><input type="radio" name="shameless_2" value="3"> Agree</label>
+              <label><input type="radio" name="shameless_2" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I'm willing to sacrifice my reputation or manners to get ahead or gain advantage.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="shameless_3" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="shameless_3" value="1"> Disagree</label>
+              <label><input type="radio" name="shameless_3" value="2"> Neutral</label>
+              <label><input type="radio" name="shameless_3" value="3"> Agree</label>
+              <label><input type="radio" name="shameless_3" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+        </section>
+        <section class="character-block">
+          <fieldset>
+            <legend>I am extremely frugal and hate spending money unless absolutely necessary.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="penurious_1" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="penurious_1" value="1"> Disagree</label>
+              <label><input type="radio" name="penurious_1" value="2"> Neutral</label>
+              <label><input type="radio" name="penurious_1" value="3"> Agree</label>
+              <label><input type="radio" name="penurious_1" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I feel upset when I have to part with my money, even for things I need.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="penurious_2" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="penurious_2" value="1"> Disagree</label>
+              <label><input type="radio" name="penurious_2" value="2"> Neutral</label>
+              <label><input type="radio" name="penurious_2" value="3"> Agree</label>
+              <label><input type="radio" name="penurious_2" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>People have called me cheap or a miser.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="penurious_3" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="penurious_3" value="1"> Disagree</label>
+              <label><input type="radio" name="penurious_3" value="2"> Neutral</label>
+              <label><input type="radio" name="penurious_3" value="3"> Agree</label>
+              <label><input type="radio" name="penurious_3" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+        </section>
+        <section class="character-block">
+          <fieldset>
+            <legend>My sense of humor can be quite crude or offensive at times.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="gross_1" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="gross_1" value="1"> Disagree</label>
+              <label><input type="radio" name="gross_1" value="2"> Neutral</label>
+              <label><input type="radio" name="gross_1" value="3"> Agree</label>
+              <label><input type="radio" name="gross_1" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I sometimes make vulgar or inappropriate jokes, even if they make others uncomfortable.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="gross_2" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="gross_2" value="1"> Disagree</label>
+              <label><input type="radio" name="gross_2" value="2"> Neutral</label>
+              <label><input type="radio" name="gross_2" value="3"> Agree</label>
+              <label><input type="radio" name="gross_2" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I don't mind being a bit obscene or overly familiar if I think it's funny.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="gross_3" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="gross_3" value="1"> Disagree</label>
+              <label><input type="radio" name="gross_3" value="2"> Neutral</label>
+              <label><input type="radio" name="gross_3" value="3"> Agree</label>
+              <label><input type="radio" name="gross_3" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+        </section>
+        <section class="character-block">
+          <fieldset>
+            <legend>I have a habit of approaching people or starting conversations at inconvenient times.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="unseasonable_1" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="unseasonable_1" value="1"> Disagree</label>
+              <label><input type="radio" name="unseasonable_1" value="2"> Neutral</label>
+              <label><input type="radio" name="unseasonable_1" value="3"> Agree</label>
+              <label><input type="radio" name="unseasonable_1" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I sometimes bring up topics that are out of place or poorly timed.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="unseasonable_2" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="unseasonable_2" value="1"> Disagree</label>
+              <label><input type="radio" name="unseasonable_2" value="2"> Neutral</label>
+              <label><input type="radio" name="unseasonable_2" value="3"> Agree</label>
+              <label><input type="radio" name="unseasonable_2" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>People have told me my timing is off when I try to join or start conversations.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="unseasonable_3" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="unseasonable_3" value="1"> Disagree</label>
+              <label><input type="radio" name="unseasonable_3" value="2"> Neutral</label>
+              <label><input type="radio" name="unseasonable_3" value="3"> Agree</label>
+              <label><input type="radio" name="unseasonable_3" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+        </section>
+        <section class="character-block">
+          <fieldset>
+            <legend>I tend to offer unsolicited advice or help.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="officious_1" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="officious_1" value="1"> Disagree</label>
+              <label><input type="radio" name="officious_1" value="2"> Neutral</label>
+              <label><input type="radio" name="officious_1" value="3"> Agree</label>
+              <label><input type="radio" name="officious_1" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I often get involved in other people's business thinking I'm being helpful.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="officious_2" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="officious_2" value="1"> Disagree</label>
+              <label><input type="radio" name="officious_2" value="2"> Neutral</label>
+              <label><input type="radio" name="officious_2" value="3"> Agree</label>
+              <label><input type="radio" name="officious_2" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I have a hard time minding my own business when I think I could help someone.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="officious_3" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="officious_3" value="1"> Disagree</label>
+              <label><input type="radio" name="officious_3" value="2"> Neutral</label>
+              <label><input type="radio" name="officious_3" value="3"> Agree</label>
+              <label><input type="radio" name="officious_3" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+        </section>
+        <section class="character-block">
+          <fieldset>
+            <legend>I often take a while to understand things that others grasp quickly.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="stupid_1" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="stupid_1" value="1"> Disagree</label>
+              <label><input type="radio" name="stupid_1" value="2"> Neutral</label>
+              <label><input type="radio" name="stupid_1" value="3"> Agree</label>
+              <label><input type="radio" name="stupid_1" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I sometimes make silly mistakes or decisions because I didn't think things through.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="stupid_2" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="stupid_2" value="1"> Disagree</label>
+              <label><input type="radio" name="stupid_2" value="2"> Neutral</label>
+              <label><input type="radio" name="stupid_2" value="3"> Agree</label>
+              <label><input type="radio" name="stupid_2" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>People have told me that I can be slow to catch on or naive.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="stupid_3" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="stupid_3" value="1"> Disagree</label>
+              <label><input type="radio" name="stupid_3" value="2"> Neutral</label>
+              <label><input type="radio" name="stupid_3" value="3"> Agree</label>
+              <label><input type="radio" name="stupid_3" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+        </section>
+        <section class="character-block">
+          <fieldset>
+            <legend>I frequently speak in a curt or harsh tone without meaning to.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="surly_1" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="surly_1" value="1"> Disagree</label>
+              <label><input type="radio" name="surly_1" value="2"> Neutral</label>
+              <label><input type="radio" name="surly_1" value="3"> Agree</label>
+              <label><input type="radio" name="surly_1" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>People often think I'm in a bad mood because of how I talk to them.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="surly_2" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="surly_2" value="1"> Disagree</label>
+              <label><input type="radio" name="surly_2" value="2"> Neutral</label>
+              <label><input type="radio" name="surly_2" value="3"> Agree</label>
+              <label><input type="radio" name="surly_2" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I'm not very friendly or polite in everyday interactions.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="surly_3" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="surly_3" value="1"> Disagree</label>
+              <label><input type="radio" name="surly_3" value="2"> Neutral</label>
+              <label><input type="radio" name="surly_3" value="3"> Agree</label>
+              <label><input type="radio" name="surly_3" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+        </section>
+        <section class="character-block">
+          <fieldset>
+            <legend>I believe in omens and signs and let them influence my actions.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="superstitious_1" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="superstitious_1" value="1"> Disagree</label>
+              <label><input type="radio" name="superstitious_1" value="2"> Neutral</label>
+              <label><input type="radio" name="superstitious_1" value="3"> Agree</label>
+              <label><input type="radio" name="superstitious_1" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I have rituals or lucky charms to avoid bad luck.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="superstitious_2" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="superstitious_2" value="1"> Disagree</label>
+              <label><input type="radio" name="superstitious_2" value="2"> Neutral</label>
+              <label><input type="radio" name="superstitious_2" value="3"> Agree</label>
+              <label><input type="radio" name="superstitious_2" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I'm very cautious about certain things because of superstitions.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="superstitious_3" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="superstitious_3" value="1"> Disagree</label>
+              <label><input type="radio" name="superstitious_3" value="2"> Neutral</label>
+              <label><input type="radio" name="superstitious_3" value="3"> Agree</label>
+              <label><input type="radio" name="superstitious_3" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+        </section>
+        <section class="character-block">
+          <fieldset>
+            <legend>I often find something to complain about, even when things are going well.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="grumbler_1" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="grumbler_1" value="1"> Disagree</label>
+              <label><input type="radio" name="grumbler_1" value="2"> Neutral</label>
+              <label><input type="radio" name="grumbler_1" value="3"> Agree</label>
+              <label><input type="radio" name="grumbler_1" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I rarely feel satisfied; I can always find something that isn't right.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="grumbler_2" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="grumbler_2" value="1"> Disagree</label>
+              <label><input type="radio" name="grumbler_2" value="2"> Neutral</label>
+              <label><input type="radio" name="grumbler_2" value="3"> Agree</label>
+              <label><input type="radio" name="grumbler_2" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>People say I complain too much or that I'm never happy with anything.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="grumbler_3" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="grumbler_3" value="1"> Disagree</label>
+              <label><input type="radio" name="grumbler_3" value="2"> Neutral</label>
+              <label><input type="radio" name="grumbler_3" value="3"> Agree</label>
+              <label><input type="radio" name="grumbler_3" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+        </section>
+        <section class="character-block">
+          <fieldset>
+            <legend>I generally do not trust other people's intentions.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="distrustful_1" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="distrustful_1" value="1"> Disagree</label>
+              <label><input type="radio" name="distrustful_1" value="2"> Neutral</label>
+              <label><input type="radio" name="distrustful_1" value="3"> Agree</label>
+              <label><input type="radio" name="distrustful_1" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I often suspect that people are out to deceive or cheat me.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="distrustful_2" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="distrustful_2" value="1"> Disagree</label>
+              <label><input type="radio" name="distrustful_2" value="2"> Neutral</label>
+              <label><input type="radio" name="distrustful_2" value="3"> Agree</label>
+              <label><input type="radio" name="distrustful_2" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Even with friends or family, I am wary and need proof before I fully trust them.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="distrustful_3" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="distrustful_3" value="1"> Disagree</label>
+              <label><input type="radio" name="distrustful_3" value="2"> Neutral</label>
+              <label><input type="radio" name="distrustful_3" value="3"> Agree</label>
+              <label><input type="radio" name="distrustful_3" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+        </section>
+        <section class="character-block">
+          <fieldset>
+            <legend>I don't pay much attention to personal hygiene or grooming.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="offensive_1" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="offensive_1" value="1"> Disagree</label>
+              <label><input type="radio" name="offensive_1" value="2"> Neutral</label>
+              <label><input type="radio" name="offensive_1" value="3"> Agree</label>
+              <label><input type="radio" name="offensive_1" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I often neglect my appearance or cleanliness, even if it bothers others.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="offensive_2" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="offensive_2" value="1"> Disagree</label>
+              <label><input type="radio" name="offensive_2" value="2"> Neutral</label>
+              <label><input type="radio" name="offensive_2" value="3"> Agree</label>
+              <label><input type="radio" name="offensive_2" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I don't mind wearing dirty or stained clothes if I'm comfortable.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="offensive_3" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="offensive_3" value="1"> Disagree</label>
+              <label><input type="radio" name="offensive_3" value="2"> Neutral</label>
+              <label><input type="radio" name="offensive_3" value="3"> Agree</label>
+              <label><input type="radio" name="offensive_3" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+        </section>
+        <section class="character-block">
+          <fieldset>
+            <legend>I tend to do things that annoy others without realizing it.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="unpleasant_1" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="unpleasant_1" value="1"> Disagree</label>
+              <label><input type="radio" name="unpleasant_1" value="2"> Neutral</label>
+              <label><input type="radio" name="unpleasant_1" value="3"> Agree</label>
+              <label><input type="radio" name="unpleasant_1" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I have some habits that others find irritating, even though I mean no harm.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="unpleasant_2" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="unpleasant_2" value="1"> Disagree</label>
+              <label><input type="radio" name="unpleasant_2" value="2"> Neutral</label>
+              <label><input type="radio" name="unpleasant_2" value="3"> Agree</label>
+              <label><input type="radio" name="unpleasant_2" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I sometimes bother people at the wrong time or with things they don't care about.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="unpleasant_3" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="unpleasant_3" value="1"> Disagree</label>
+              <label><input type="radio" name="unpleasant_3" value="2"> Neutral</label>
+              <label><input type="radio" name="unpleasant_3" value="3"> Agree</label>
+              <label><input type="radio" name="unpleasant_3" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+        </section>
+        <section class="character-block">
+          <fieldset>
+            <legend>I care a lot about small honors or being seen with important people.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="pettyambition_1" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="pettyambition_1" value="1"> Disagree</label>
+              <label><input type="radio" name="pettyambition_1" value="2"> Neutral</label>
+              <label><input type="radio" name="pettyambition_1" value="3"> Agree</label>
+              <label><input type="radio" name="pettyambition_1" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I try to show off even minor achievements or connections.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="pettyambition_2" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="pettyambition_2" value="1"> Disagree</label>
+              <label><input type="radio" name="pettyambition_2" value="2"> Neutral</label>
+              <label><input type="radio" name="pettyambition_2" value="3"> Agree</label>
+              <label><input type="radio" name="pettyambition_2" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I like being associated with prestige, even in trivial matters.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="pettyambition_3" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="pettyambition_3" value="1"> Disagree</label>
+              <label><input type="radio" name="pettyambition_3" value="2"> Neutral</label>
+              <label><input type="radio" name="pettyambition_3" value="3"> Agree</label>
+              <label><input type="radio" name="pettyambition_3" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+        </section>
+        <section class="character-block">
+          <fieldset>
+            <legend>I avoid spending money whenever I can, even if it's for a good cause.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="mean_1" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="mean_1" value="1"> Disagree</label>
+              <label><input type="radio" name="mean_1" value="2"> Neutral</label>
+              <label><input type="radio" name="mean_1" value="3"> Agree</label>
+              <label><input type="radio" name="mean_1" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I try to dodge contributing to group expenses or gifts.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="mean_2" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="mean_2" value="1"> Disagree</label>
+              <label><input type="radio" name="mean_2" value="2"> Neutral</label>
+              <label><input type="radio" name="mean_2" value="3"> Agree</label>
+              <label><input type="radio" name="mean_2" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I prefer saving money over treating others or doing what's expected socially.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="mean_3" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="mean_3" value="1"> Disagree</label>
+              <label><input type="radio" name="mean_3" value="2"> Neutral</label>
+              <label><input type="radio" name="mean_3" value="3"> Agree</label>
+              <label><input type="radio" name="mean_3" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+        </section>
+        <section class="character-block">
+          <fieldset>
+            <legend>I tend to exaggerate or lie about my achievements to impress people.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="boastful_1" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="boastful_1" value="1"> Disagree</label>
+              <label><input type="radio" name="boastful_1" value="2"> Neutral</label>
+              <label><input type="radio" name="boastful_1" value="3"> Agree</label>
+              <label><input type="radio" name="boastful_1" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I love talking about my successes and accomplishments.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="boastful_2" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="boastful_2" value="1"> Disagree</label>
+              <label><input type="radio" name="boastful_2" value="2"> Neutral</label>
+              <label><input type="radio" name="boastful_2" value="3"> Agree</label>
+              <label><input type="radio" name="boastful_2" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I make myself sound more important or successful than I really am.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="boastful_3" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="boastful_3" value="1"> Disagree</label>
+              <label><input type="radio" name="boastful_3" value="2"> Neutral</label>
+              <label><input type="radio" name="boastful_3" value="3"> Agree</label>
+              <label><input type="radio" name="boastful_3" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+        </section>
+        <section class="character-block">
+          <fieldset>
+            <legend>I often feel that most people are beneath me.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="arrogant_1" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="arrogant_1" value="1"> Disagree</label>
+              <label><input type="radio" name="arrogant_1" value="2"> Neutral</label>
+              <label><input type="radio" name="arrogant_1" value="3"> Agree</label>
+              <label><input type="radio" name="arrogant_1" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I hate to admit when I need help or when I'm wrong.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="arrogant_2" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="arrogant_2" value="1"> Disagree</label>
+              <label><input type="radio" name="arrogant_2" value="2"> Neutral</label>
+              <label><input type="radio" name="arrogant_2" value="3"> Agree</label>
+              <label><input type="radio" name="arrogant_2" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I prefer to be the one in control and dislike taking orders or suggestions.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="arrogant_3" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="arrogant_3" value="1"> Disagree</label>
+              <label><input type="radio" name="arrogant_3" value="2"> Neutral</label>
+              <label><input type="radio" name="arrogant_3" value="3"> Agree</label>
+              <label><input type="radio" name="arrogant_3" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+        </section>
+        <section class="character-block">
+          <fieldset>
+            <legend>I get scared easily and avoid taking risks.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="coward_1" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="coward_1" value="1"> Disagree</label>
+              <label><input type="radio" name="coward_1" value="2"> Neutral</label>
+              <label><input type="radio" name="coward_1" value="3"> Agree</label>
+              <label><input type="radio" name="coward_1" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>In tense situations, I'm usually the first to look for a way out.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="coward_2" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="coward_2" value="1"> Disagree</label>
+              <label><input type="radio" name="coward_2" value="2"> Neutral</label>
+              <label><input type="radio" name="coward_2" value="3"> Agree</label>
+              <label><input type="radio" name="coward_2" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I'd rather be safe than face something that frightens me.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="coward_3" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="coward_3" value="1"> Disagree</label>
+              <label><input type="radio" name="coward_3" value="2"> Neutral</label>
+              <label><input type="radio" name="coward_3" value="3"> Agree</label>
+              <label><input type="radio" name="coward_3" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+        </section>
+        <section class="character-block">
+          <fieldset>
+            <legend>I like being in charge and having power over decisions.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="oligarch_1" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="oligarch_1" value="1"> Disagree</label>
+              <label><input type="radio" name="oligarch_1" value="2"> Neutral</label>
+              <label><input type="radio" name="oligarch_1" value="3"> Agree</label>
+              <label><input type="radio" name="oligarch_1" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I often think things would be better if I were the one making the rules.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="oligarch_2" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="oligarch_2" value="1"> Disagree</label>
+              <label><input type="radio" name="oligarch_2" value="2"> Neutral</label>
+              <label><input type="radio" name="oligarch_2" value="3"> Agree</label>
+              <label><input type="radio" name="oligarch_2" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I have a hard time with group decisions because I prefer to call the shots.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="oligarch_3" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="oligarch_3" value="1"> Disagree</label>
+              <label><input type="radio" name="oligarch_3" value="2"> Neutral</label>
+              <label><input type="radio" name="oligarch_3" value="3"> Agree</label>
+              <label><input type="radio" name="oligarch_3" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+        </section>
+        <section class="character-block">
+          <fieldset>
+            <legend>I often try to learn new hobbies or skills that people my age typically don't.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="latelearner_1" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="latelearner_1" value="1"> Disagree</label>
+              <label><input type="radio" name="latelearner_1" value="2"> Neutral</label>
+              <label><input type="radio" name="latelearner_1" value="3"> Agree</label>
+              <label><input type="radio" name="latelearner_1" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I participate in activities usually done by younger people, despite my age.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="latelearner_2" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="latelearner_2" value="1"> Disagree</label>
+              <label><input type="radio" name="latelearner_2" value="2"> Neutral</label>
+              <label><input type="radio" name="latelearner_2" value="3"> Agree</label>
+              <label><input type="radio" name="latelearner_2" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I like to prove that I can still do things that others think I'm too old for.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="latelearner_3" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="latelearner_3" value="1"> Disagree</label>
+              <label><input type="radio" name="latelearner_3" value="2"> Neutral</label>
+              <label><input type="radio" name="latelearner_3" value="3"> Agree</label>
+              <label><input type="radio" name="latelearner_3" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+        </section>
+        <section class="character-block">
+          <fieldset>
+            <legend>I often speak badly about others and point out their flaws.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="evilspeaker_1" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="evilspeaker_1" value="1"> Disagree</label>
+              <label><input type="radio" name="evilspeaker_1" value="2"> Neutral</label>
+              <label><input type="radio" name="evilspeaker_1" value="3"> Agree</label>
+              <label><input type="radio" name="evilspeaker_1" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I tend to put a negative spin on things when talking about people.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="evilspeaker_2" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="evilspeaker_2" value="1"> Disagree</label>
+              <label><input type="radio" name="evilspeaker_2" value="2"> Neutral</label>
+              <label><input type="radio" name="evilspeaker_2" value="3"> Agree</label>
+              <label><input type="radio" name="evilspeaker_2" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I enjoy criticizing people and seldom praise anyone sincerely.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="evilspeaker_3" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="evilspeaker_3" value="1"> Disagree</label>
+              <label><input type="radio" name="evilspeaker_3" value="2"> Neutral</label>
+              <label><input type="radio" name="evilspeaker_3" value="3"> Agree</label>
+              <label><input type="radio" name="evilspeaker_3" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+        </section>
+        <section class="character-block">
+          <fieldset>
+            <legend>I sometimes defend people with bad reputations or questionable behavior.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="patronrascals_1" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="patronrascals_1" value="1"> Disagree</label>
+              <label><input type="radio" name="patronrascals_1" value="2"> Neutral</label>
+              <label><input type="radio" name="patronrascals_1" value="3"> Agree</label>
+              <label><input type="radio" name="patronrascals_1" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I believe that everyone is flawed and often say that no one is truly honest.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="patronrascals_2" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="patronrascals_2" value="1"> Disagree</label>
+              <label><input type="radio" name="patronrascals_2" value="2"> Neutral</label>
+              <label><input type="radio" name="patronrascals_2" value="3"> Agree</label>
+              <label><input type="radio" name="patronrascals_2" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I tend to befriend or admire people whom others consider unethical or immoral.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="patronrascals_3" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="patronrascals_3" value="1"> Disagree</label>
+              <label><input type="radio" name="patronrascals_3" value="2"> Neutral</label>
+              <label><input type="radio" name="patronrascals_3" value="3"> Agree</label>
+              <label><input type="radio" name="patronrascals_3" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+        </section>
+        <section class="character-block">
+          <fieldset>
+            <legend>I have an intense desire for wealth and material gain.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="avaricious_1" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="avaricious_1" value="1"> Disagree</label>
+              <label><input type="radio" name="avaricious_1" value="2"> Neutral</label>
+              <label><input type="radio" name="avaricious_1" value="3"> Agree</label>
+              <label><input type="radio" name="avaricious_1" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I'm willing to bend rules or take advantage of situations to get more money or assets.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="avaricious_2" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="avaricious_2" value="1"> Disagree</label>
+              <label><input type="radio" name="avaricious_2" value="2"> Neutral</label>
+              <label><input type="radio" name="avaricious_2" value="3"> Agree</label>
+              <label><input type="radio" name="avaricious_2" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>No matter how much I have, I always want more.</legend>
+            <div class="likert-options">
+              <label><input type="radio" name="avaricious_3" value="0" required> Strongly Disagree</label>
+              <label><input type="radio" name="avaricious_3" value="1"> Disagree</label>
+              <label><input type="radio" name="avaricious_3" value="2"> Neutral</label>
+              <label><input type="radio" name="avaricious_3" value="3"> Agree</label>
+              <label><input type="radio" name="avaricious_3" value="4"> Strongly Agree</label>
+            </div>
+          </fieldset>
+        </section>
+        <input type="submit" value="Submit and Get Results" />
+      </form>
+    </section>
+    <section id="results">
+      <h2>Your Results</h2>
+      <p id="topResult"></p>
+      <ol id="rankedList"></ol>
+      <div id="shareButtons">
+        <button id="copyBtn">Copy Results</button>
+        <button id="downloadBtn">Download Results</button>
+        <button id="shareBtn">Share Results</button>
+      </div>
+    </section>
+  </div>
+  <script>
+    // Show the question section when Start button is clicked
+    document.getElementById('startBtn').addEventListener('click', function() {
+      document.getElementById('intro').style.display = 'none';
+      document.getElementById('questionsSection').style.display = 'block';
+      document.getElementById('questionsSection').scrollIntoView({ behavior: 'smooth' });
+    });
+    // Handle form submission
+    document.getElementById('quizForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      if (!this.checkValidity()) {
+        // If required fields are missing, browser will handle showing a message
+        return;
+      }
+      const scores = {};
+      scores['ironical'] = 0;
+      scores['flatterer'] = 0;
+      scores['garrulous'] = 0;
+      scores['boor'] = 0;
+      scores['complaisant'] = 0;
+      scores['reckless'] = 0;
+      scores['chatty'] = 0;
+      scores['gossip'] = 0;
+      scores['shameless'] = 0;
+      scores['penurious'] = 0;
+      scores['gross'] = 0;
+      scores['unseasonable'] = 0;
+      scores['officious'] = 0;
+      scores['stupid'] = 0;
+      scores['surly'] = 0;
+      scores['superstitious'] = 0;
+      scores['grumbler'] = 0;
+      scores['distrustful'] = 0;
+      scores['offensive'] = 0;
+      scores['unpleasant'] = 0;
+      scores['pettyambition'] = 0;
+      scores['mean'] = 0;
+      scores['boastful'] = 0;
+      scores['arrogant'] = 0;
+      scores['coward'] = 0;
+      scores['oligarch'] = 0;
+      scores['latelearner'] = 0;
+      scores['evilspeaker'] = 0;
+      scores['patronrascals'] = 0;
+      scores['avaricious'] = 0;
+      const checkedOptions = document.querySelectorAll('input[type=radio]:checked');
+      checkedOptions.forEach(option => {
+        const name = option.name;
+        const traitKey = name.split('_')[0];
+        const value = parseInt(option.value);
+        if (!isNaN(value)) {
+          if (!scores.hasOwnProperty(traitKey)) {
+            scores[traitKey] = 0;
+          }
+          scores[traitKey] += value;
+        }
+      });
+      // Determine top score and top traits
+      let maxScore = -Infinity;
+      for (let trait in scores) {
+        if (scores[trait] > maxScore) {
+          maxScore = scores[trait];
+        }
+      }
+      const topTraits = [];
+      for (let trait in scores) {
+        if (scores[trait] === maxScore) {
+          topTraits.push(trait);
+        }
+      }
+      // Map trait keys to full names for display
+      const traitNames = {
+        'ironical': 'The Ironical', 'flatterer': 'The Flatterer', 'garrulous': 'The Garrulous',
+        'boor': 'The Boor', 'complaisant': 'The Complaisant', 'reckless': 'The Reckless',
+        'chatty': 'The Chatty', 'gossip': 'The Gossip', 'shameless': 'The Shameless',
+        'penurious': 'The Penurious', 'gross': 'The Gross', 'unseasonable': 'The Unseasonable',
+        'officious': 'The Officious', 'stupid': 'The Stupid', 'surly': 'The Surly',
+        'superstitious': 'The Superstitious', 'grumbler': 'The Grumbler', 'distrustful': 'The Distrustful',
+        'offensive': 'The Offensive', 'unpleasant': 'The Unpleasant', 'pettyambition': 'Of Petty Ambition',
+        'mean': 'The Mean', 'boastful': 'The Boastful', 'arrogant': 'The Arrogant',
+        'coward': 'The Coward', 'oligarch': 'The Oligarch', 'latelearner': 'The Late-Learner',
+        'evilspeaker': 'The Evil-Speaker', 'patronrascals': 'The Patron of Rascals', 'avaricious': 'The Avaricious'
+      };
+      // Compose top result text
+      let topText = "";
+      if (topTraits.length === 1) {
+        topText = "Your top match is " + traitNames[topTraits[0]] + " with a score of " + maxScore + ".";
+      } else if (topTraits.length > 1) {
+        const namesList = topTraits.map(t => traitNames[t]);
+        if (namesList.length === 2) {
+          topText = "You are tied between " + namesList[0] + " and " + namesList[1] + " as your top characters (score " + maxScore + " each).";
+        } else {
+          const lastName = namesList.pop();
+          topText = "You are tied among " + namesList.join(", ") + ", and " + lastName + " as your top characters (score " + maxScore + " each).";
+        }
+      }
+      document.getElementById('topResult').textContent = topText;
+      // Sort all characters by score (descending)
+      const sortedTraits = Object.keys(scores).sort((a, b) => scores[b] - scores[a]);
+      const listElement = document.getElementById('rankedList');
+      listElement.innerHTML = "";
+      sortedTraits.forEach(trait => {
+        const li = document.createElement('li');
+        li.textContent = traitNames[trait] + ": " + scores[trait];
+        listElement.appendChild(li);
+      });
+      // Hide questions and show results section
+      document.getElementById('questionsSection').style.display = 'none';
+      document.getElementById('results').style.display = 'block';
+      document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    });
+    // Copy results to clipboard
+    document.getElementById('copyBtn').addEventListener('click', function() {
+      const topText = document.getElementById('topResult').textContent;
+      let listText = "";
+      document.querySelectorAll('#rankedList li').forEach(li => {
+        listText += li.textContent + "\n";
+      });
+      const fullText = topText + "\nRanking:\n" + listText;
+      try {
+        navigator.clipboard.writeText(fullText);
+        alert("Results copied to clipboard!");
+      } catch (err) {
+        console.error("Copy failed:", err);
+        alert("Copying to clipboard failed.");
+      }
+    });
+    // Download results as text file
+    document.getElementById('downloadBtn').addEventListener('click', function() {
+      const topText = document.getElementById('topResult').textContent;
+      let listText = "";
+      document.querySelectorAll('#rankedList li').forEach(li => {
+        listText += li.textContent + "\n";
+      });
+      const fullText = topText + "\nRanking:\n" + listText;
+      const blob = new Blob([fullText], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'theophrastus_results.txt';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    });
+    // Share results via Web Share API (if supported)
+    document.getElementById('shareBtn').addEventListener('click', function() {
+      if (!navigator.share) {
+        alert("Web Share not supported on this browser.");
+        return;
+      }
+      const topText = document.getElementById('topResult').textContent;
+      let listText = "";
+      document.querySelectorAll('#rankedList li').forEach(li => {
+        listText += li.textContent + "\n";
+      });
+      const fullText = topText + "\nRanking:\n" + listText;
+      navigator.share({
+        title: "My Theophrastus Characters Test Result",
+        text: fullText
+      }).catch(err => {
+        console.error("Share failed:", err);
+      });
+    });
+    // Hide Share button if not supported
+    if (!navigator.share) {
+      document.getElementById('shareBtn').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
