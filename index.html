@@ -1173,9 +1173,47 @@
       const sortedTraits = Object.keys(scores).sort((a, b) => scores[b] - scores[a]);
       const listElement = document.getElementById('rankedList');
       listElement.innerHTML = "";
+      const traitLinks = {
+        'ironical': 'https://classicalliberalarts.com/classical-catholic-library/theophrastus-characters/the-dissembler/',
+        'flatterer': 'https://classicalliberalarts.com/classical-catholic-library/theophrastus-characters/the-adulator/',
+        'garrulous': 'https://classicalliberalarts.com/classical-catholic-library/theophrastus-characters/the-garrulous/',
+        'boor': 'https://classicalliberalarts.com/classical-catholic-library/theophrastus-characters/the-rustic/',
+        'complaisant': 'https://classicalliberalarts.com/classical-catholic-library/theophrastus-characters/the-plausible/',
+        'reckless': 'https://classicalliberalarts.com/classical-catholic-library/theophrastus-characters/the-ruffian/',
+        'chatty': 'https://classicalliberalarts.com/classical-catholic-library/theophrastus-characters/the-locquacious/',
+        'gossip': 'https://classicalliberalarts.com/classical-catholic-library/theophrastus-characters/fabricator-of-news/',
+        'avaricious': 'https://classicalliberalarts.com/classical-catholic-library/theophrastus-characters/the-sordid/',
+        'shameless': 'https://classicalliberalarts.com/classical-catholic-library/theophrastus-characters/the-shameless/',
+        'penurious': 'https://classicalliberalarts.com/classical-catholic-library/theophrastus-characters/the-parsimonious/',
+        'gross': 'https://classicalliberalarts.com/classical-catholic-library/theophrastus-characters/the-impure/',
+        'unseasonable': 'https://classicalliberalarts.com/classical-catholic-library/theophrastus-characters/the-blunderer/',
+        'officious': 'https://classicalliberalarts.com/classical-catholic-library/theophrastus-characters/the-busybody/',
+        'stupid': 'https://classicalliberalarts.com/classical-catholic-library/theophrastus-characters/the-stupid/',
+        'surly': 'https://classicalliberalarts.com/classical-catholic-library/theophrastus-characters/the-morose/',
+        'superstitious': 'https://classicalliberalarts.com/classical-catholic-library/theophrastus-characters/the-superstitious/',
+        'grumbler': 'https://classicalliberalarts.com/classical-catholic-library/theophrastus-characters/the-petulant/',
+        'distrustful': 'https://classicalliberalarts.com/classical-catholic-library/theophrastus-characters/the-suspicious/',
+        'offensive': 'https://classicalliberalarts.com/classical-catholic-library/theophrastus-characters/the-filthy/',
+        'unpleasant': 'https://classicalliberalarts.com/classical-catholic-library/theophrastus-characters/the-disagreeable/',
+        'pettyambition': 'https://classicalliberalarts.com/classical-catholic-library/theophrastus-characters/the-vain/',
+        'mean': 'https://classicalliberalarts.com/classical-catholic-library/theophrastus-characters/the-penurious/',
+        'boastful': 'https://classicalliberalarts.com/classical-catholic-library/theophrastus-characters/the-ostentatious/',
+        'arrogant': 'https://classicalliberalarts.com/classical-catholic-library/theophrastus-characters/the-proud/',
+        'coward': 'https://classicalliberalarts.com/classical-catholic-library/theophrastus-characters/the-fearful/',
+        'latelearner': 'https://classicalliberalarts.com/classical-catholic-library/theophrastus-characters/the-old-trifler/',
+        'evilspeaker': 'https://classicalliberalarts.com/classical-catholic-library/theophrastus-characters/the-detractor/',
+        'oligarch': 'https://classicalliberalarts.com/classical-catholic-library/theophrastus-characters/the-oligarch/',
+        'patronrascals': 'https://classicalliberalarts.com/classical-catholic-library/theophrastus-characters/the-malignant/'
+      };
       sortedTraits.forEach(trait => {
         const li = document.createElement('li');
-        li.textContent = traitNames[trait] + ": " + scores[trait];
+        const percentage = ((scores[trait] / 12) * 100).toFixed(1); // Calculate percentage
+        const link = document.createElement('a');
+        link.href = traitLinks[trait] || "#"; // Assign unique link or fallback to "#"
+        link.target = "_blank";
+        link.textContent = traitNames[trait];
+        li.appendChild(link);
+        li.appendChild(document.createTextNode(`: ${percentage}%`)); // Append percentage
         listElement.appendChild(li);
       });
       // Hide questions and show results section
